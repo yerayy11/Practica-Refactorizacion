@@ -9,7 +9,11 @@ package Ejercicio1;
 
 	        total = calcularSumaBase(precios, total);
 
-	        if (vip) {
+	        aplicarDescuentoOImpuesto(n, imp, vip, total);
+	    }
+
+		private void aplicarDescuentoOImpuesto(String n, double imp, boolean vip, double total) {
+			if (vip) {
 	            total = total - (total * 0.10);
 	            System.out.println("Cliente VIP: " + n);
 	            System.out.println("Total con descuento: " + total);
@@ -18,7 +22,7 @@ package Ejercicio1;
 	            System.out.println("Cliente Normal: " + n);
 	            System.out.println("Total con impuestos: " + total);
 	        }
-	    }
+		}
 
 		private double calcularSumaBase(List<Double> precios, double total) {
 			for (Double d : precios) {
