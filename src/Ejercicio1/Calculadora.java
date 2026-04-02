@@ -4,21 +4,26 @@ package Ejercicio1;
 
 	public class Calculadora {
 
-	    public void procesarFactura(List<Double> l, String n, double imp, boolean vip) {
-	        double t = 0;
+	    public void procesarFactura(List<Double> precios, String n, double imp, boolean vip) {
+	        double total = 0;
 
-	        for (Double d : l) {
-	            t += d;
-	        }
+	        total = calcularSumaBase(precios, total);
 
 	        if (vip) {
-	            t = t - (t * 0.10);
+	            total = total - (total * 0.10);
 	            System.out.println("Cliente VIP: " + n);
-	            System.out.println("Total con descuento: " + t);
+	            System.out.println("Total con descuento: " + total);
 	        } else {
-	            t = t + (t * imp);
+	            total = total + (total * imp);
 	            System.out.println("Cliente Normal: " + n);
-	            System.out.println("Total con impuestos: " + t);
+	            System.out.println("Total con impuestos: " + total);
 	        }
 	    }
+
+		private double calcularSumaBase(List<Double> precios, double total) {
+			for (Double d : precios) {
+	            total += d;
+	        }
+			return total;
+		}
 	}
