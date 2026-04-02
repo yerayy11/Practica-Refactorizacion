@@ -4,7 +4,9 @@ package Ejercicio1;
 
 	public class Calculadora {
 
-	    public void procesarFactura(List<Double> precios, String n, double imp, boolean vip) {
+	    private static final double DESCUENTO_VIP = 0.10;
+
+		public void procesarFactura(List<Double> precios, String n, double imp, boolean vip) {
 	        double total = 0;
 
 	        total = calcularSumaBase(precios, total);
@@ -14,7 +16,7 @@ package Ejercicio1;
 
 		private void aplicarDescuentoOImpuesto(String n, double imp, boolean vip, double total) {
 			if (vip) {
-	            total = total - (total * 0.10);
+	            total = total - (total * DESCUENTO_VIP);
 	            System.out.println("Cliente VIP: " + n);
 	            System.out.println("Total con descuento: " + total);
 	        } else {
