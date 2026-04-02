@@ -1,16 +1,24 @@
 package Ejercicio1;
 
-public class Calculadora {
+	import java.util.List;
 
-	public int suma(int a, int b) {
-        return a + b;
-    }
+	public class Calculadora {
 
-    public int resta(int a, int b) {
-        return a - b;
-    }
+	    public void p(List<Double> l, String n, double imp, boolean vip) {
+	        double t = 0;
 
-    public int multiplicar(int a, int b) {
-        return a * b;
-    }
-}
+	        for (Double d : l) {
+	            t += d;
+	        }
+
+	        if (vip) {
+	            t = t - (t * 0.10);
+	            System.out.println("Cliente VIP: " + n);
+	            System.out.println("Total con descuento: " + t);
+	        } else {
+	            t = t + (t * imp);
+	            System.out.println("Cliente Normal: " + n);
+	            System.out.println("Total con impuestos: " + t);
+	        }
+	    }
+	}
