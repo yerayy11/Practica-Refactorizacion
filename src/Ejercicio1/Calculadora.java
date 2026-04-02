@@ -4,7 +4,7 @@ package Ejercicio1;
 
 	public class Calculadora {
 
-	    public void p(List<Double> l, String n, double imp, boolean vip) {
+	    public void procesarFactura(List<Double> l, String n, double imp, boolean vip) {
 	        double t = 0;
 
 	        for (Double d : l) {
